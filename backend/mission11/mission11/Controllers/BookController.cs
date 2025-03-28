@@ -20,15 +20,24 @@ public class BookController : ControllerBase
 
     // HttpGet for the books api
     [HttpGet(Name = "GetBooks")]
-    public IActionResult GetBooks(int pageSize = 10, int pageNumber = 1)
+    public IActionResult GetBooks(int pageSize = 10, int pageNumber = 1, [FromQuery] List<string>? category = null)
     {
+        var query = _context.Books.AsQueryable();
+
+        if (category is not null && category.Any())
+        {
+            query = query.Where(b => category.Contains(b.Category));
+        }
+        
+        var totalBooks = query.Count();
         // Query the books based on # of books to display and page number
-        var books = _context.Books
+        var books = query
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .ToList();
+        
         // Pass the count of all book elements
-        var totalBooks = _context.Books.Count();
+
 
         // Pass the both variables in an object
         var loadedObjects = new
@@ -38,5 +47,15 @@ public class BookController : ControllerBase
         };
         return Ok(loadedObjects);
     }
-    
+
+    [HttpGet("GetBookCategories")]
+    public IActionResult GetBookCategories()
+    {
+        var BookCategories = _context.Books
+            .Select(b => b.Category)
+            .Distinct()
+            .ToList();
+        
+        return Ok(BookCategories);
+    }
 }
