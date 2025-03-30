@@ -18,7 +18,7 @@ public class BookController : ControllerBase
         _context = context;
     }
 
-    // HttpGet for the books api
+    // HttpGet for the books api queried on categories
     [HttpGet(Name = "GetBooks")]
     public IActionResult GetBooks(int pageSize = 10, int pageNumber = 1, [FromQuery] List<string>? category = null)
     {
@@ -48,6 +48,7 @@ public class BookController : ControllerBase
         return Ok(loadedObjects);
     }
 
+    // Hosts the distinct category names
     [HttpGet("GetBookCategories")]
     public IActionResult GetBookCategories()
     {
