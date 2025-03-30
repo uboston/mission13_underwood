@@ -1,5 +1,6 @@
 import { CartItem } from '../types/cartItem';
 import { useState, createContext, ReactNode, useContext } from 'react';
+// Cart Context with add, remove and clear functions
 
 interface CartContextType {
   cart: CartItem[];

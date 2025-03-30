@@ -3,6 +3,8 @@ import { useCart } from "../context/CartContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css"
 
+// Create Cart Summary component
+
 const CartSummary = () => {
     const navigate = useNavigate();
     const { cart } = useCart();

@@ -5,6 +5,7 @@ import CategoryFilter from '../components/CategoryFilter';
 import Banner from '../components/Banner';
 import CartSummary from '../components/CartSummary';
 import { useState } from 'react';
+// Completed Book page
 
 function BookPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);

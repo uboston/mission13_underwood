@@ -5,6 +5,7 @@ import BookPage from './pages/BookPage';
 import CartPage from './pages/CartPage';
 import { CartProvider } from './context/CartContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// App with pages and routing
 
 function App() {
     // State to track the current theme

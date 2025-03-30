@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useCart } from '../context/CartContext';
 import { CartItem } from '../types/cartItem';
 
+// The enitre book list component (table with pagination and sorting)
 
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<book[]>([]);

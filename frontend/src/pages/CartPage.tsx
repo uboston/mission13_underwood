@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useCart } from '../context/CartContext';
 import { CartItem } from '../types/cartItem';
+// Complete Cart Page
 
 function CartPage () {
     const navigate = useNavigate();

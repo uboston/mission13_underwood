@@ -1,5 +1,6 @@
 import "../App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+// Bookstore Banner component
 function Banner ()
 {
     return(
