@@ -5,7 +5,8 @@ interface FetchBooksResponse {
   totalBooks: number;
 }
 
-const API_URL = 'https://localhost:5000/book';
+const API_URL =
+  'https://mission13-underwood-backend-fzawa8drezbddcay.eastus-01.azurewebsites.net/book';
 
 export const fetchBooks = async (
   pageSize: number,
@@ -63,7 +64,6 @@ export const updateBook = async (
   return await response.json();
 };
 
-
 export const deleteBook = async (bookId: number): Promise<void> => {
   const response = await fetch(`${API_URL}/DeleteBook/${bookId}`, {
     method: 'DELETE',
@@ -71,4 +71,4 @@ export const deleteBook = async (bookId: number): Promise<void> => {
   if (!response.ok) {
     throw new Error('Failed to delete book');
   }
-}
+};

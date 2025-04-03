@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/29a3e517-2b6b-4de6-b21d-32ffd44b2fb9/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/Mission13-Underwood-Backend",
+  "appService.deploySubpath": "backend/mission11/mission11/publish"
+}
