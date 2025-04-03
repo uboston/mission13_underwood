@@ -8,7 +8,7 @@ function CategoryFilter ({selectedCategories, onCheckboxChange}: {
     const [categories, setCategories] = useState<string[]>([]);
     useEffect(() => {
         const fetchCategories = async () => {
-            const response = await fetch('https://localhost:5000/book/GetBookCategories');
+            const response = await fetch('https://mission13-underwood-backend-fzawa8drezbddcay.eastus-01.azurewebsites.net/book/GetBookCategories');
             const data = await response.json();
             setCategories(data);
         }
